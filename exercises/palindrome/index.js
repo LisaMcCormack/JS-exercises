@@ -7,6 +7,20 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  return  str.split('').every((e, i) => {
+    return e === str[str.length -i -1]
+  })
+}
+
+// the solution commented out below is better because calling every
+// is doing more work than needs to be done
+
 
 module.exports = palindrome;
+
+
+// function palindrome(str) {
+//   pal = str.split("").reduce((rev, char) => char + rev, '');
+//   return pal === str
+// }
