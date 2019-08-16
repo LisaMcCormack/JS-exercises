@@ -5,6 +5,20 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(str) {}
+function maxChar(str) {
+  const chars = {};
+  let maxChar = 0;
+  let letter = '';
+  for (let char of str) {
+    chars[char] = chars[char] + 1 || 1
+  }
+  for (let char in chars) {          //use in for iterating over kv objects
+    if (chars[char] > maxChar) {
+      maxChar = chars[char];
+      letter = char;
+    }
+  }
+  return letter;
+}
 
 module.exports = maxChar;
